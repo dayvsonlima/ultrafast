@@ -1,10 +1,10 @@
 require 'securerandom'
 require 'ultrafast/version'
 require 'redis'
-require './ultrafast/current_application'
-require './ultrafast/storage'
-require './ultrafast/model'
-require './ultrafast/server'
+require 'ultrafast/current_application'
+require 'ultrafast/storage'
+require 'ultrafast/model'
+require 'ultrafast/server'
 
 module Ultrafast
   class Error < StandardError; end
