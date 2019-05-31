@@ -1,0 +1,6 @@
+namespace :ultrafast do
+  desc 'start ultrafast server'
+  task start: [:environment] do
+    Ultrafast::Server.start
+  end
+end
