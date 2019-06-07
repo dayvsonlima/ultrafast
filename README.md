@@ -18,7 +18,7 @@ And then execute:
 
 Add this rake task in yours `lib/tasks/ultrafast.rake`
 
-```
+```ruby
 namespace :ultrafast do
   desc 'start ultrafast server'
   task start: [:environment] do
@@ -32,15 +32,15 @@ end
 Add this module in your module:
 
 app/models/user.rb
-```
+```ruby
 class User < ApplicationRecord
   extend Ultrafast::Model
 end
 ```
 
-Replace your `create` method for `fast_create`
+Replace your `create` method by `fast_create`
 
-```
+```ruby
 User.fast_create(user_params)
 ```
 
