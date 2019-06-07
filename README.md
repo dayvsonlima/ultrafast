@@ -16,13 +16,38 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Add this rake task in yours `lib/tasks/ultrafast.rake`
 
-    $ gem install ultrafast
+```
+namespace :ultrafast do
+  desc 'start ultrafast server'
+  task start: [:environment] do
+    Ultrafast::Server.start
+  end
+end
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Add this module in your module:
+
+app/models/user.rb
+```
+class User < ApplicationRecord
+  extend Ultrafast::Model
+end
+```
+
+Replace your `create` method for `fast_create`
+
+```
+User.fast_create(user_params)
+```
+
+Start the fast_create server
+
+    $ rake ultrafast:start
+
 
 ## Development
 
@@ -32,8 +57,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ultrafast. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/dayvsonlima/ultrafast. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Code of Conduct
 
-Everyone interacting in the Ultrafast project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/ultrafast/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Ultrafast project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/dayvsonlima/ultrafast/blob/master/CODE_OF_CONDUCT.md).
