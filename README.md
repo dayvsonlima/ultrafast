@@ -57,10 +57,10 @@ UF_REDIS_PORT
 UF_REDIS_HOST
 ```
 
-
 Server loop
 ```sh
 # Define the interval between loop inserts
+# Default is 0.5
 UF_LOOP_INTERVAL
 ```
 
