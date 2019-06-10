@@ -49,7 +49,7 @@ Start the fast_create server
 ## Configurations
 
 Redis connection
-```
+```sh
 # Default is 6379
 UF_REDIS_PORT
 
@@ -59,7 +59,7 @@ UF_REDIS_HOST
 
 
 Server loop
-```
+```sh
 # Define the interval between loop inserts
 UF_LOOP_INTERVAL
 ```
