@@ -46,6 +46,24 @@ Start the fast_create server
 
     $ rake ultrafast:start
 
+## Configurations
+
+Redis connection
+```
+# Default is 6379
+UF_REDIS_PORT
+
+# Default is 127.0.0.1
+UF_REDIS_HOST
+```
+
+
+Server loop
+```
+# Define the interval between loop inserts
+UF_LOOP_INTERVAL
+```
+
 
 ## Development
 
