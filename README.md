@@ -55,6 +55,9 @@ UF_REDIS_PORT
 
 # Default is 127.0.0.1
 UF_REDIS_HOST
+
+# Default is 0
+UF_REDIS_DB
 ```
 
 Server loop
