@@ -6,7 +6,6 @@ module Ultrafast
       content = attributes.to_json
 
       redis_connection.set(store_key, content)
-      self.new(attributes)
     rescue => exception
       error_message(exception)
       self.create(*attributes)
