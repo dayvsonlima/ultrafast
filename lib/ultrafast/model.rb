@@ -7,8 +7,8 @@ module Ultrafast
 
       redis_connection.set(store_key, content)
       self.new(attributes)
-    rescue
-      error_message
+    rescue => exception
+      error_message(exception)
       self.create(*attributes)
     end
 
@@ -28,10 +28,11 @@ module Ultrafast
       Ultrafast::CurrentApplication.name
     end
 
-    def error_message
-      Rails.logger.warn '-----------------------------------------------------'
-      Rails.logger.warn '[WARN Error] on try use fastcreate, running fallback'
-      Rails.logger.warn '-----------------------------------------------------'
+    def error_message(exception)
+      Rails.logger.error exception.backtrace
+      Rails.logger.error '-----------------------------------------------------'
+      Rails.logger.error '[WARN Error] on try use fastcreate, running fallback'
+      Rails.logger.error '-----------------------------------------------------'
     end
   end
 end
